@@ -1,9 +1,11 @@
+"use client"
+
 import React from 'react'
+
 // import Image from 'next/image'
-// import {MenuIcon, SearchIcon, ShoppingCartIcon} from "heroicons/react/outline"
 import { IoSearch } from "react-icons/io5";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-
+import { signIn } from "next-auth/react"
 
 const Header = () => {
   return (
@@ -36,7 +38,7 @@ const Header = () => {
                     {/* right side  */}
 
                     <div className='text-black flex items-center text-xs space-x-6 mx-7 whitespace-nowrap'>
-                        <div className='link'>
+                        <div onClick={signIn} className='link'>
                             <p>Hello Nittin Nobby Mathew</p>
                             <p className='font-extrabold md:text-sm'>Accounts & List</p>
                         </div>
