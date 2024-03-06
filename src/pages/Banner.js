@@ -14,29 +14,28 @@ import 'swiper/css/autoplay'
 
 const Banner = () => {
     return (
-        <section className='py-1'>
-            <div className='container'>
-                <Swiper
-                    navigation
-                    autoplay
-                    pagination={{ type: 'fraction' }}
-                    modules={[Navigation, Pagination, Autoplay]}
-                    className='h-[880px] w-full rounded-lg '
-                >
-                    {images.map((image, index) => (
-                        <SwiperSlide key={image}>
-                            <div className='flex h-full w-full items-center justify-center'>
-                                <Image 
-                                    src={image.src}
-                                    alt={image.alt}
-                                    className='block h-full w-full object-cover'
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-        </section>
+        <div className='relative'>
+            <div className='absolute w-full h-32 bg-gradient-to-t from-green-200 to transparent bottom-0 z-20' />
+            <Swiper
+                navigation
+                autoplay
+                pagination={{ type: 'fraction' }}
+                modules={[Navigation, Pagination, Autoplay]}
+                className='h-[480px] w-full rounded-lg '
+            >
+                {images.map((image, index) => (
+                    <SwiperSlide key={image}>
+                        <div className='flex h-full w-full items-center justify-center'>
+                            <Image
+                                src={image.src}
+                                alt={image.alt}
+                                className='block h-full w-full object-cover'
+                            />
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     )
 }
 
